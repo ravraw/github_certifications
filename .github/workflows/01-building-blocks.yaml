@@ -13,7 +13,12 @@ jobs:
     steps:
       - name: Failed step
         run: |
-          echo "i will fail"
-          exit 1
+          echo "i will pass"
+          exit 0
+      - name: Multi-line bash
+        run: |
+          echo "Hello, world!"
+          echo "I am a multi-line bash script"
+          echo "I will also pass"
       - name: Say goodbye
         run: echo "Goodbye, world!"
