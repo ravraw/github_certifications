@@ -19,7 +19,7 @@ jobs:
         run: |
           echo "This Job"
           echo "is runing on"
-          echo "a Windows runner."
+          echo "a $RUNNER_OS runner."
 
   mac-echo:
     runs-on: macos-latest
@@ -28,4 +28,4 @@ jobs:
         run: |
           echo "This Job"
           echo "is runing on"
-          echo "a Windows runner."
+          echo "a $RUNNER_OS runner."
