@@ -16,6 +16,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Show OS
+        shell: bash
         run: |
           echo "This Job"
           echo "is runing on"
