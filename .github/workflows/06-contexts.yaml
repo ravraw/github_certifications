@@ -10,7 +10,7 @@ on:
     inputs:
       debug:
         type: boolean
-        # default: false
+        default: false
 
 jobs:
   echo-data:
