@@ -1,6 +1,6 @@
 name: 08 - Using variables
 
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 env:
   WORKFLOW_VAR: "I am worlflow env var"
   OVERWRITTEN: "I will be overwritten"
