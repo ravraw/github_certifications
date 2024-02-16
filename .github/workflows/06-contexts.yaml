@@ -1,8 +1,16 @@
 name: 06 - Contexts
+# run-name: Workflow initiated by ${{github.actor}}
+run-name: Input variable -  ${{ inputs.debug }}
 env:
   MY_VAR: "ravraw"
 
-on: [push, workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        # default: false
 
 jobs:
   echo-data:
