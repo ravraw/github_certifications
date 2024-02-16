@@ -42,4 +42,5 @@ jobs:
           echo "Job 2 env: ${{env.MY_JOB_VAR}}- ${{env.MY_OVERWRITTEN_VAR}}"
           echo "Step env: ${{env.MY_STEP_VAR}}- ${{env.MY_OVERWRITTEN_VAR}}"
       - name: Print Env without placeholder
-        run: "Workflow env: $MY_WORKFLOW_VAR - $MY_OVERWRITTEN_VAR"
+        run: |
+          echo "Workflow env: $MY_WORKFLOW_VAR - $MY_OVERWRITTEN_VAR"
