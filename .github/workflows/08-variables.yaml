@@ -8,14 +8,14 @@ env:
 jobs:
   echo:
     env:
-      JOB_VAR: "I am a job env var"
-      OVERWRITTEN: "i ahve been overwritten at the job level"
+      JOB_VAR: "I am a job env var."
+      OVERWRITTEN: "i have been overwritten at the job level."
     runs-on: ubuntu-latest
     steps:
       - name: Print Env Variables
         env:
-          STEP_VAR: "i am a step env var"
-          step_var2: "ia m another step var"
+          STEP_VAR: "i am a step env var."
+          step_var2: "i am another step var."
         run: |
           echo  "Step env var: $STEP_VAR "
           echo  "Step env var 2: $step_var2 "
