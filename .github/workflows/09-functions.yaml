@@ -1,17 +1,21 @@
 name: 09 - Using Functions
 
 on: [push, workflow_dispatch, pull_request]
+env:
+  IS_PR: ${{github.event_name == 'pull_request'}}
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: Print PR title
-        run: echo "PR title - $github.event.pull_request.title "
+        if: env.IS_PR
+        run: echo "PR title - ${{github.event.pull_request.title}} "
       - name: Print PR labels
-        run: echo "PR Labels - $github.event.pull_request.labels "
+        if: env.IS_PR
+        run: echo "PR Labels - ${{ github.event.pull_request.title }} "
       - name: Bug step
-        if: ${{ failure() && !cancelled() && contains(github.event.pull_request.labels, 'fix') }}
+        if: ${{ failure() && !cancelled()}} && ${{ env.IS_PR && contains(github.event.pull_request.title, 'fix') }}
         run: echo "I am a bug fix"
       - name: Sleep 20 Sec
         run: sleep 20
