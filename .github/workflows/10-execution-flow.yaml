@@ -17,12 +17,13 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Running unit tests
+      - name: Running unit test
         run: echo "Running tests..."
-        continue-on-error: true
+
       - name: Failing tests
         if: ${{ !inputs.pass-unit-tests }}
         run: exit 1
+        continue-on-error: true
 
   deploy-nonprod:
     runs-on: ubuntu-latest
