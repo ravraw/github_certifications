@@ -1,0 +1,31 @@
+name: Cache Node and NPM Dependencies
+description: "This action allows to cache both Node and NPM dependencies based on the package-lock.json file."
+on:
+  workflow_dispatch:
+    inputs:
+      node-version:
+        type: choice
+        default: 20.x
+        description: NodeJS version to use
+      working-dir:
+        required: false
+        default: '.'
+        description: The working directory of the application
+runs:
+  using: composite
+  steps:
+  - name: Setup NodeJS version ${{ inputs.node-version }}
+    uses: actions/setup-node@v4
+    with:
+      node-version: ${{ inputs.node-version }}
+  - name: Cache dependencies
+    id: cache
+    uses: actions/cache@v3
+    with:
+      path: ${{ inputs.working-dir }}
+      key: node-modules-${{ hashFiles('${{ inputs.working-dir }}/package-lock.json') }}
+  - name: Install dependencies
+    if: steps.cache.outputs.cache-hit != 'true'
+    shell: bash
+    run: npm ci
+
