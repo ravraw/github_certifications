@@ -1,7 +1,7 @@
-const core = require("@actions/core");
+import { info } from "@actions/core";
 
 async function run() {
-  core.info("I am a custom JS action");
+  info("I am a custom JS action");
 }
 
 run();
