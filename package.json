@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "js-dependency-update": "file:.github/actions/js-dependency-update"
+  }
+}
