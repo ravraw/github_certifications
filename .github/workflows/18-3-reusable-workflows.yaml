@@ -5,13 +5,11 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/18-1-reusable-workflows.yaml
-        with:
-          target-directory: dummy_dir
+    uses: ./.github/workflows/18-1-reusable-workflows.yaml
+    with:
+      target-directory: dummy_dir
   e2e-tests:
-    runs-on: ubuntu-latest
+    uses: ravraw/github-actions-course-example-e2e/.github/workflows/e2e.yaml@main
     needs: deploy
-    steps:
-      - uses: ravraw/github-actions-course-example-e2e/.github/workflows/e2e.yaml@main
+    secrets:
+      access-token: ${{ secrets.GH_TOKEN }}
