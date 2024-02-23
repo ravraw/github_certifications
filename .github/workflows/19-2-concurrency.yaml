@@ -14,7 +14,7 @@ jobs:
         id: ping-url
         uses: ./.github/actions/docker-ping-url
         with:
-          url: https://www.gooooogle.com
+          url: "https://www.invalid-aidfghaidgfiazgd.com"
           max_trials: 20
           delay: 5
 
@@ -27,6 +27,6 @@ jobs:
         id: ping-url
         uses: ./.github/actions/docker-ping-url
         with:
-          url: https://www.gooooogle.com
+          url: "https://www.invalid-aidfghaidgfiazgd.com"
           max_trials: 20
           delay: 5
