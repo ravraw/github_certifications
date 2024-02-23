@@ -17,8 +17,9 @@ jobs:
           url: https://www.gooooogle.com
           max_trials: 20
           delay: 5
+
   png-without-concurrency:
-    runs-on: ububtu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
