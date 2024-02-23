@@ -5,9 +5,9 @@ on:
 
 jobs:
   deploy:
-    uses: ./.github/workflows/18-1-reusable-workflows.yaml
+    uses: ./.github/workflows/18-1-reusable-workflow.yaml
     with:
-      target-directory: dummy_dir
+      target-directory: dummmy-dir
   e2e-tests:
     uses: ravraw/github-actions-course-example-e2e/.github/workflows/e2e.yaml@main
     needs: deploy
