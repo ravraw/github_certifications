@@ -18,4 +18,3 @@
 PR-test-1
 PR-test-2
 
-> > > > > > > 73387c1 (Updated readme)
